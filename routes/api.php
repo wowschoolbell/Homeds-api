@@ -14,3 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+
+// Application Cache clear
+Route::get('/cache-clear', function() {
+    Artisan::call('optimize:clear');
+    return "Cache cleared!";
+ });
+
+ // Storage Link
+Route::get('/storage-link', function() {
+    Artisan::call('storage:link');
+    return "Storage liniked Successfully!";
+ });
+
+ // Seeder 
+Route::get('/seeder', function() {
+    Artisan::call('db:seed');
+    return "Seeded successfully!";
+ });
+ 
