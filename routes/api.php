@@ -35,4 +35,10 @@ Route::get('/seeder', function() {
     Artisan::call('db:seed');
     return "Seeded successfully!";
  });
+
+ // Migration
+ Route::get('/migrate', function() {
+    Artisan::call('migrate');
+    return "migrate!";
+ });
  
